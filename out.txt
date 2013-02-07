@@ -1,0 +1,108 @@
+[INFO] Scanning for projects...
+[WARNING] 
+[WARNING] Some problems were encountered while building the effective model for itw.ucl.restassured:ITW-restassured:jar:0.0.1-SNAPSHOT
+[WARNING] 'build.plugins.plugin.version' for org.apache.maven.plugins:maven-failsafe-plugin is missing. @ line 58, column 12
+[WARNING] 
+[WARNING] It is highly recommended to fix these problems because they threaten the stability of your build.
+[WARNING] 
+[WARNING] For this reason, future Maven versions might no longer support building such malformed projects.
+[WARNING] 
+[INFO]                                                                         
+[INFO] ------------------------------------------------------------------------
+[INFO] Building ITW-restassured 0.0.1-SNAPSHOT
+[INFO] ------------------------------------------------------------------------
+[INFO] 
+[INFO] --- maven-clean-plugin:2.4.1:clean (default-clean) @ ITW-restassured ---
+[INFO] Deleting C:\Users\MConstantinides\workspace\ITW-restassured\target
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:resources (default-resources) @ ITW-restassured ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\MConstantinides\workspace\ITW-restassured\src\main\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:compile (default-compile) @ ITW-restassured ---
+[INFO] Compiling 1 source file to C:\Users\MConstantinides\workspace\ITW-restassured\target\classes
+[INFO] 
+[INFO] --- maven-resources-plugin:2.5:testResources (default-testResources) @ ITW-restassured ---
+[debug] execute contextualize
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory C:\Users\MConstantinides\workspace\ITW-restassured\src\test\resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:2.3.2:testCompile (default-testCompile) @ ITW-restassured ---
+[INFO] Compiling 2 source files to C:\Users\MConstantinides\workspace\ITW-restassured\target\test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.12:test (default-test) @ ITW-restassured ---
+[INFO] Surefire report directory: C:\Users\MConstantinides\workspace\ITW-restassured\target\surefire-reports
+[INFO] Using configured provider org.apache.maven.surefire.junitcore.JUnitCoreProvider
+
+-------------------------------------------------------
+ T E S T S
+-------------------------------------------------------
+Concurrency config is parallel='none', perCoreThreadCount=true, threadCount=2, useUnlimitedThreads=false
+Running itw.ucl.restassured.ITW_restassured.AppTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 sec
+Running itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware
+*********************** Testing GetAppDetails ***************************
+*********************** Testing GetAppsForCategory ***************************
+*********************** Testing GetQuestionsDetails ***************************
+*********************** Testing GetCategories ***************************
+*********************** Testing SubmitResults  ********************************
+*********************** Testing GetTestDetails ***************************
+*********************** Testing GetTestQuestions ***************************
+*********************** Testing StoreApp ***************************
+*********************** Testing GetTests ***************************
+*********************** Testing GetTypes ***************************
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 2.086 sec
+
+Results :
+
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0
+
+[INFO] 
+[INFO] --- maven-jar-plugin:2.3.2:jar (default-jar) @ ITW-restassured ---
+[INFO] Building jar: C:\Users\MConstantinides\workspace\ITW-restassured\target\aad-ws.jar
+[INFO] 
+[INFO] --- cargo-maven2-plugin:1.1.4:start (start-container) @ ITW-restassured ---
+[INFO] [talledLocalContainer] Tomcat 6.x starting...
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:21 PM org.apache.catalina.core.AprLifecycleListener init
+[WARNING] [talledLocalContainer] INFO: The Apache Tomcat Native library which allows optimal performance in production environments was not found on the java.library.path: C:\Program Files\Java\jdk1.7.0_11\jre\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Program Files\Common Files\Microsoft Shared\Windows Live;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files\Windows Live\Shared;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\;C:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\Microsoft SQL Server\100\Tools\Binn\VSShell\Common7\IDE\;C:\Program Files\Microsoft Visual Studio 9.0\Common7\IDE\PrivateAssemblies\;C:\Program Files\Java\jdk1.7.0_11\bin;C:\Users\MConstantinides\apache-maven-3.0.4-bin\apache-maven-3.0.4\bin;.
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:21 PM org.apache.coyote.http11.Http11Protocol init
+[WARNING] [talledLocalContainer] INFO: Initializing Coyote HTTP/1.1 on http-9999
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:21 PM org.apache.catalina.startup.Catalina load
+[WARNING] [talledLocalContainer] INFO: Initialization processed in 355 ms
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:21 PM org.apache.catalina.core.StandardService start
+[WARNING] [talledLocalContainer] INFO: Starting service Catalina
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:21 PM org.apache.catalina.core.StandardEngine start
+[WARNING] [talledLocalContainer] INFO: Starting Servlet Engine: Apache Tomcat/6.0.8
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:21 PM org.apache.catalina.core.StandardHost start
+[WARNING] [talledLocalContainer] INFO: XML validation disabled
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:21 PM org.apache.catalina.startup.HostConfig deployWAR
+[WARNING] [talledLocalContainer] INFO: Deploying web application archive cargocpc.war
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:22 PM org.apache.coyote.http11.Http11Protocol start
+[WARNING] [talledLocalContainer] INFO: Starting Coyote HTTP/1.1 on http-9999
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:22 PM org.apache.jk.common.ChannelSocket init
+[WARNING] [talledLocalContainer] INFO: Port busy 9999 java.net.BindException: Address already in use: JVM_Bind
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:22 PM org.apache.jk.common.ChannelSocket init
+[WARNING] [talledLocalContainer] INFO: JK: ajp13 listening on /0.0.0.0:10000
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:22 PM org.apache.jk.server.JkMain start
+[WARNING] [talledLocalContainer] INFO: Jk running ID=1 time=0/26  config=null
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:22 PM org.apache.catalina.startup.Catalina start
+[WARNING] [talledLocalContainer] INFO: Server startup in 424 ms
+[INFO] [talledLocalContainer] Tomcat 6.x started on port [9999]
+[INFO] 
+[INFO] --- cargo-maven2-plugin:1.1.4:stop (stop-container) @ ITW-restassured ---
+[INFO] [talledLocalContainer] Tomcat 6.x is stopping...
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:23 PM org.apache.coyote.http11.Http11Protocol pause
+[WARNING] [talledLocalContainer] INFO: Pausing Coyote HTTP/1.1 on http-9999
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:24 PM org.apache.catalina.core.StandardService stop
+[WARNING] [talledLocalContainer] INFO: Stopping service Catalina
+[WARNING] [talledLocalContainer] Feb 07, 2013 10:51:24 PM org.apache.coyote.http11.Http11Protocol destroy
+[WARNING] [talledLocalContainer] INFO: Stopping Coyote HTTP/1.1 on http-9999
+[INFO] [talledLocalContainer] Tomcat 6.x is stopped
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 16.496s
+[INFO] Finished at: Thu Feb 07 22:51:26 GMT 2013
+[INFO] Final Memory: 6M/32M
+[INFO] ------------------------------------------------------------------------
