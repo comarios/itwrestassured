@@ -172,36 +172,6 @@ public class RestAssuredSchoolware {
 		}
 	}
 
-	@Test
-	public void testSubmitResultNoValidation() {
-
-		System.out
-				.println("*********************** Testing SubmitResults No Validation  ********************************");
-
-		try {
-
-			BufferedReader br = new BufferedReader(new FileReader(
-					pathToFileSubmitResults));
-			String buffer;
-			StringBuilder rawJson = new StringBuilder();
-			while ((buffer = br.readLine()) != null) {
-				rawJson.append(buffer);
-			}
-
-			given().contentType("application/json; charset=UTF-16")
-					.body(rawJson.toString()).expect().statusCode(201).when()
-					.post(submitResultsResource);
-
-			br.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
 	
 	@Test
 	public void testGetTestDetails() {

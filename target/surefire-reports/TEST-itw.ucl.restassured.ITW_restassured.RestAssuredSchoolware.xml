@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite failures="1" time="2.321" errors="0" skipped="0" tests="12" name="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware">
+<testsuite failures="1" time="2.36" errors="0" skipped="0" tests="12" name="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.7.0_11\jre\bin"/>
@@ -60,14 +60,7 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="pentium_pro+mmx pentium_pro pentium+mmx pentium i486 i386 i86"/>
   </properties>
-  <testcase time="1.256" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetTests"/>
-  <testcase time="0.027" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetTypes"/>
-  <testcase time="0.599" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testStoreApp"/>
-  <testcase time="0.046" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetApplicationDetails"/>
-  <testcase time="0.137" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetAppsForCategory"/>
-  <testcase time="0.006" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testSubmitResultNoValidation"/>
-  <testcase time="0.037" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetQuestionsDetails"/>
-  <testcase time="0.021" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetCategories"/>
+  <testcase time="1.401" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetCategories"/>
   <testcase time="0.003" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testStoreAppTwice">
     <failure message="Expected status code &lt;400&gt; doesn&apos;t match actual status code &lt;201&gt;." type="java.lang.AssertionError">java.lang.AssertionError: Expected status code &lt;400&gt; doesn&apos;t match actual status code &lt;201&gt;.
 	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
@@ -89,10 +82,16 @@
 	at com.jayway.restassured.internal.RequestSpecificationImpl.applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy:1037)
 	at com.jayway.restassured.internal.RequestSpecificationImpl.this$2$applyPathParamsAndSendRequest(RequestSpecificationImpl.groovy)
 	at com.jayway.restassured.internal.RequestSpecificationImpl$this$2$applyPathParamsAndSendRequest.callCurrent(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCallCurrent(CallSiteArray.java:46)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:133)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.callCurrent(AbstractCallSite.java:149)
 	at com.jayway.restassured.internal.RequestSpecificationImpl.post(RequestSpecificationImpl.groovy:127)
 	at com.jayway.restassured.specification.RequestSender$post.call(Unknown Source)
+	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:42)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:108)
+	at org.codehaus.groovy.runtime.callsite.AbstractCallSite.call(AbstractCallSite.java:120)
 	at com.jayway.restassured.internal.ResponseSpecificationImpl.post(ResponseSpecificationImpl.groovy:221)
-	at itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware.testStoreAppTwice(RestAssuredSchoolware.java:121)
+	at itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware.testStoreAppTwice(RestAssuredSchoolware.java:118)
 	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:57)
 	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -135,7 +134,14 @@
     <system-out>*********************** Testing StoreApp Twice ***************************
 </system-out>
   </testcase>
-  <testcase time="0.122" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testSubmitResult"/>
-  <testcase time="0.037" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetTestDetails"/>
-  <testcase time="0.03" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetTestQuestions"/>
+  <testcase time="0.163" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testSubmitResult"/>
+  <testcase time="0.042" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetTestDetails"/>
+  <testcase time="0.026" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetTestQuestions"/>
+  <testcase time="0.329" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testStoreApp"/>
+  <testcase time="0.054" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetApplicationDetails"/>
+  <testcase time="0.133" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetAppsForCategory"/>
+  <testcase time="0.115" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testSubmitResultNoValidation"/>
+  <testcase time="0.049" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetQuestionsDetails"/>
+  <testcase time="0.023" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetTests"/>
+  <testcase time="0.022" classname="itw.ucl.restassured.ITW_restassured.RestAssuredSchoolware" name="testGetTypes"/>
 </testsuite>
