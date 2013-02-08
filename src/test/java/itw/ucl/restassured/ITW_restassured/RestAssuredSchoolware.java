@@ -16,6 +16,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import java.io.FileInputStream;
@@ -23,6 +24,8 @@ import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.io.IOException;
 import java.util.Properties;
+
+import junit.framework.Assert;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -93,6 +96,7 @@ public class RestAssuredSchoolware {
 		expect().statusCode(200).
 	    //body("categories.categType",  equalTo("Mathematics")).
 				when().get(categoriesResource);
+	
 	}
 	
 	@Test
@@ -106,6 +110,18 @@ public class RestAssuredSchoolware {
 				.expect().statusCode(201).when().post(storeAppResource);
 	}
 
+	// Basically, should be fail, but it doesn't
+	@Test
+	public void testStoreAppTwice() {
+		System.out
+				.println("*********************** Testing StoreApp Twice ***************************");
+		given().multiPart(new File(pathToFileStoreApp))
+				.parameters("name", "Group4 Testing", "description",
+						"This is Group4 testing", "type", "1", "category", "1",
+						"size", "500 KB", "developer", "Group4 Dev Team")
+				.expect().statusCode(400).when().post(storeAppResource);
+	}
+	
 	@Test
 	public void testGetApplicationDetails() {
 		System.out
@@ -156,6 +172,37 @@ public class RestAssuredSchoolware {
 		}
 	}
 
+	@Test
+	public void testSubmitResultNoValidation() {
+
+		System.out
+				.println("*********************** Testing SubmitResults No Validation  ********************************");
+
+		try {
+
+			BufferedReader br = new BufferedReader(new FileReader(
+					pathToFileSubmitResults));
+			String buffer;
+			StringBuilder rawJson = new StringBuilder();
+			while ((buffer = br.readLine()) != null) {
+				rawJson.append(buffer);
+			}
+
+			given().contentType("application/json; charset=UTF-16")
+					.body(rawJson.toString()).expect().statusCode(201).when()
+					.post(submitResultsResource);
+
+			br.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
 	@Test
 	public void testGetTestDetails() {
 		System.out
