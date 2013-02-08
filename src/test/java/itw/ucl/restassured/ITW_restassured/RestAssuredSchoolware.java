@@ -4,8 +4,7 @@ import static com.jayway.restassured.RestAssured.expect;
 import static com.jayway.restassured.RestAssured.get;
 import static com.jayway.restassured.RestAssured.given;
 import static com.jayway.restassured.matcher.RestAssuredMatchers.matchesXsd;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasXPath;
+import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -18,9 +17,11 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Map;
 
+import org.hamcrest.Matchers;
 import org.junit.Test;
 
 import com.jayway.restassured.RestAssured;
+import com.jayway.restassured.assertion.JSONAssertion;
 import com.jayway.restassured.builder.ResponseSpecBuilder;
 import com.jayway.restassured.parsing.Parser;
 import com.jayway.restassured.path.json.JsonPath;
@@ -44,16 +45,16 @@ public class RestAssuredSchoolware {
 	private static final String testDetailsResource = baseURI
 			+ "aad-ws/api/test/";
 	private static final String getTestResource = baseURI + "aad-ws/api/tests/";
-	private static final String getTypesResource = baseURI + "aad-ws/api/types";
+	private static final String getTypesResource = baseURI + "aad-ws/api/types/";
 	private static final String getTestQuestionResource = baseURI
 			+ "aad-ws/api/questions/";
 	private static final String getQuestionDetails = baseURI
 			+ "aad-ws/api/question/";
-
+	
 	// Change that line to point to your File System
 	// Used for POST Methods
-	private static final String pathToFileStoreApp = "C:\\Users\\MConstantinides\\workspace\\ITW-restassured\\TestData\\storeApp\\Group4.zip\\";
-	private static final String pathToFileSubmitResults = "C:\\Users\\MConstantinides\\workspace\\ITW-restassured\\TestData\\submitResults\\result.json";
+	private static final String pathToFileStoreApp = "C:\\Users\\MConstantinides\\git\\itwrestassured\\TestData\\storeApp\\Group4.zip\\";
+	private static final String pathToFileSubmitResults = "C:\\Users\\MConstantinides\\git\\itwrestassured\\TestData\\submitResults\\result.json";
 
 	private static final String appForCategoryResource = baseURI
 			+ "aad-ws/api/applications/";
@@ -76,6 +77,19 @@ public class RestAssuredSchoolware {
 	// Used in testGetQuestionsDetails
 	private static final String questionID = "1";
 
+	
+	@Test
+	public void testGetCategories() {
+		System.out
+				.println("*********************** Testing GetCategories ***************************");
+
+
+		given().contentType("application/json; charset=UTF-16");
+		expect().statusCode(200).
+	    //body("categories.categType",  equalTo("Mathematics")).
+				when().get(categoriesResource);
+	}
+	
 	@Test
 	public void testStoreApp() {
 		System.out
@@ -104,18 +118,7 @@ public class RestAssuredSchoolware {
 				.get(appForCategoryResource + categoryID);
 	}
 
-	@Test
-	public void testGetCategories() {
-		System.out
-				.println("*********************** Testing GetCategories ***************************");
 
-		given().contentType("application/json; charset=UTF-16");
-		expect().statusCode(200).
-		// body(hasXPath("//person[@id='20']/email[.='dev@hascode.com'] and firstName='Sara' and lastName='Stevens'")).
-		// body("categories.findAll { it.categType = Mathematics }.categId",
-		// equalTo("1")).
-				when().get(categoriesResource);
-	}
 
 	@Test
 	public void testSubmitResult() {
