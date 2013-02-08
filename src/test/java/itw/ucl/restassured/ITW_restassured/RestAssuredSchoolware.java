@@ -15,7 +15,14 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.HashMap;
 import java.util.Map;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+import java.io.IOException;
+import java.util.Properties;
 
 import org.hamcrest.Matchers;
 import org.junit.Test;
@@ -76,14 +83,12 @@ public class RestAssuredSchoolware {
 
 	// Used in testGetQuestionsDetails
 	private static final String questionID = "1";
-
 	
 	@Test
 	public void testGetCategories() {
 		System.out
 				.println("*********************** Testing GetCategories ***************************");
-
-
+	
 		given().contentType("application/json; charset=UTF-16");
 		expect().statusCode(200).
 	    //body("categories.categType",  equalTo("Mathematics")).

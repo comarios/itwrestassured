@@ -1,0 +1,2 @@
+storeAppPath = 
+submitResultsPath = 
